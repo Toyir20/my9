@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Exo 2", sans-serif !important;
+  }
+
+  :root {
+    --primary: #f4f4f4;
+    --secondary: #17252a;
+    --main: #009494;
+    --accent1: #007f7f;
+    --accent2: #00b3b3;
+  }
+
+  .dark {
+    --primary: #17252a;
+    --secondary: #f4f4f4;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  list-style: none;
+  scroll-behavior: smooth;
+  scroll-margin-top: 100px;
+}
+
+/* --SCROLLBAR-- */
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #009494;
+}
+
+/* --LOGO-ANIMATION-- */
+
+.logo {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke-dasharray: 15px;
+  transition: 300ms;
+  stroke: var(--secondary);
+  animation: load 15s infinite linear;
+}
+
+@keyframes load {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dashoffset: 200px;
+  }
+}

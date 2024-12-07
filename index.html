@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google" content="notranslate" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY9 Learning Center</title>
+  <meta name="description"
+    content="English and IELTS Learning Center by First Lady Niner Mamura Yuldasheva (IELTS 9)" />
+  <meta name="keywords"
+    content="IELTS, English learning, IELTS preparation, English courses, IELTS courses, English proficiency, IELTS training, learn English, English language center, IELTS exam, IELTS practice, English tutoring, IELTS coaching, IELTS tips, IELTS strategies, language learning, English grammar, IELTS listening, IELTS reading, IELTS writing, IELTS speaking, IELTS 9, MY9 Learning Center, First Lady Niner Mamura Yuldasheva" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#009494" />
+  <meta name="msapplication-TileColor" content="#17252a" />
+  <meta name="theme-color" content="#f4f4f4" />
+  <meta property="og:title" content="MY9 Learning Center" />
+  <meta property="og:site_name" content="MY9 Learning Center" />
+  <meta property="og:url" content="https://my9.uz" />
+  <meta property="og:description"
+    content="English and IELTS Learning Center by First Lady Niner Mamura Yuldasheva (IELTS 9)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image"
+    content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoMo_Wa5cGSFvbSxDUw1jWJgLSTnL7lxadYg&s" />
+  <meta property="og:image:width" content="700" />
+  <meta property="og:image:height" content="700" />
+  <style>
+    :root {
+      --primary: #f4f4f4;
+      --secondary: #17252a;
+    }
+
+    .dark {
+      --primary: #17252a;
+      --secondary: #f4f4f4;
+    }
+
+    body {
+      background-color: var(--primary);
+      color: var(--secondary);
+      transition: 300ms;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme") || "light";
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+    jQuery.event.special.touchstart = {
+      setup: function (_, ns, handle) {
+        if (ns.includes("noPreventDefault")) {
+          this.addEventListener("touchstart", handle, { passive: false });
+        } else {
+          this.addEventListener("touchstart", handle, { passive: true });
+        }
+      },
+    };
+    jQuery.event.special.touchmove = {
+      setup: function (_, ns, handle) {
+        if (ns.includes("noPreventDefault")) {
+          this.addEventListener("touchmove", handle, { passive: false });
+        } else {
+          this.addEventListener("touchmove", handle, { passive: true });
+        }
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+</body>
+
+</html>
