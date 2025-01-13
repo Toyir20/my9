@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ThemeSwitcher from "../utils/Theme/ThemeSwitcher";
 import LanguageSwitcher from "../utils/i18n/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { Menu, Phone, PhoneCall, X } from "lucide-react";
+import { Menu, Phone, PhoneCall, X, LogIn, CircleUserRound } from "lucide-react";
 import useThemeStore from "../utils/Theme/Theme";
 import {
   Drawer,
@@ -27,7 +27,6 @@ const Header = () => {
     setIsLoggedIn(!!token); // Token mavjud bo'lsa true, aks holda false
   }, []);
 
-
   const links = [
     {
       text: t("header.teachers"),
@@ -49,24 +48,7 @@ const Header = () => {
       scroll_to: "contact",
       icon: "https://www.svgrepo.com/show/67982/telephone.svg",
     },
-    // Agar login qilmagan bo'lsa "Log In", aks holda "Profile"ni qo'shish
-    ...(isLoggedIn
-      ? [
-        {
-          text: t("header.profile"),
-          scroll_to: "profile",
-          icon: "https://img.icons8.com/?size=100&id=20750&format=png&color=000000",
-        },
-      ]
-      : [
-        {
-          text: t("header.login"),
-          scroll_to: "login",
-          icon: "https://img.icons8.com/color/48/enter-2.png",
-        },
-      ]),
   ];
-
 
   const socialLinks = [
     {
@@ -118,16 +100,14 @@ const Header = () => {
           <ul className="flex flex-row items-center gap-7 text-lg">
             {links.map((link, index) => (
               <li key={index} data-aos="zoom-out">
-                {/* change */}
                 <a
-                    href={
-                      link.scroll_to === "login" || link.scroll_to === "profile"
-                        ? `${link.scroll_to}`
-                        : `#${link.scroll_to}`
-                    }
+                  href={
+                    link.scroll_to === "login" || link.scroll_to === "profile"
+                      ? `${link.scroll_to}`
+                      : `#${link.scroll_to}`
+                  }
                   className="duration-200 hover:text-accent2 border-b-2 pb-[2px] border-transparent hover:border-accent2">
                   {link.text}
-                  {console.log(link.text)}
                 </a>
               </li>
             ))}
@@ -158,6 +138,49 @@ const Header = () => {
               />
             </Button>
           </a>
+          {isLoggedIn ? (
+            <a href="/profile">
+              <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                  <CircleUserRound
+                    size={17}
+                    className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                  />
+                  Profile
+                </span>
+              </button>
+              <Button
+                aria-label="call"
+                className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
+                <CircleUserRound
+                  size={15}
+                  className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
+                />
+              </Button>
+            </a>
+          ) : (
+            <a href="/login">
+              <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                  <LogIn
+                    size={17}
+                    className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                  />
+                  Login
+                </span>
+              </button>
+              <Button
+                aria-label="call"
+                className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
+                <LogIn
+                  size={15}
+                  className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
+                />
+              </Button>
+            </a>
+          )}
           <div className="flex lg:hidden cursor-pointer">
             <Sidebar
               links={links}
@@ -216,11 +239,14 @@ export function Sidebar({ links, socialLinks, isDarkMode }) {
             <ListItem
               key={index}
               className="shadow-sm shadow-accent2 dark:text-secondary dark:hover:text-primary">
-              <a href={
-                link.scroll_to === "login" || link.scroll_to === "profile"
-                  ? `${link.scroll_to}`
-                  : `#${link.scroll_to}`
-              } onClick={toggleDrawer} className="w-full h-full flex flex-row items-center gap-3">
+              <a
+                href={
+                  link.scroll_to === "login" || link.scroll_to === "profile"
+                    ? `${link.scroll_to}`
+                    : `#${link.scroll_to}`
+                }
+                onClick={toggleDrawer}
+                className="w-full h-full flex flex-row items-center gap-3">
                 <img width={25} src={link.icon} alt={link.text} />
                 {link.text}
               </a>
@@ -257,7 +283,6 @@ export function Sidebar({ links, socialLinks, isDarkMode }) {
               ))}
             </div>
           </ListItem>
-
         </List>
       </Drawer>
     </>

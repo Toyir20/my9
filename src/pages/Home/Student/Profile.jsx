@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./Profile.css"
-import axios from 'axios';
-import { baseUrl } from '../../../constants/base-url';
+// import { baseUrl } from '../../../constants/base-url';
 import { Button } from '@material-tailwind/react';
 let token = localStorage.getItem("token");
+import { getData } from '../../../api/api';
 const Student = () => {
 
   const [activeIndex, setActiveIndex] = useState(null); // Accordion boshqaruvi
@@ -11,31 +11,33 @@ const Student = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal holati
   const [studentData, setStudentData] = useState([])
   const [studentCourse, setStudentCourse] = useState([])
+  const [lessonFiles, setLessonFiles] = useState([])
+  const [selectedLesson, setSelectedLesson] = useState([])
 
+  const getSelectedLesson = (id) => {
+    getData(`students/lessons/${id}`).then((res) => {
+
+      setSelectedLesson(res?.data?.data)
+    })
+  }
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const openModal = (content) => {
+  const openModal = (content, files) => {
+    getSelectedLesson(files.id)
+    setLessonFiles(files)
     setModalContent(content);
     setIsModalOpen(true);
   };
-
   const closeModal = () => {
     setModalContent(null);
     setIsModalOpen(false);
   };
 
-  // const courses = ["Reading", "Listening", "Speaking", "Writing"];
+  const a = () => {
 
-  const test = () => {
-    axios.get(`${baseUrl}users/me`, {
-      headers: {
-        'Authorization': `Bearer ${token}`, // Tokenni kiritish kerak
-        'Accept': '*/*',
-        "Content-Type": "application/json"                         // Har qanday formatni qabul qilish
-      }
-    })
+    getData(`users/me`)
       .then((response) => {
         setStudentData(response.data.data)
         setStudentCourse(response.data.data.courses)
@@ -44,10 +46,11 @@ const Student = () => {
         console.log('Xato:', error);
       });
   }
+
   useEffect(() => {
-    test()
+    a()
   }, [])
-  const logout =()=>{
+  const logout = () => {
     localStorage.removeItem("token");
     location.reload()
   }
@@ -80,7 +83,7 @@ const Student = () => {
                       opacity: lesson?.is_open ? 1 : 0.5, // Disabled ko'rinishi
                       cursor: lesson?.is_open ? "pointer" : "not-allowed", // Ko'rsatkich kursori
                     }}
-                    onClick={() => lesson?.is_open && openModal(lesson?.title)}
+                    onClick={() => lesson?.is_open && openModal(lesson?.title, lesson)}
                   >
                     {lesson?.title}
                     {lesson?.is_open ? (
@@ -105,16 +108,35 @@ const Student = () => {
         {isModalOpen && (
           <div className="modal">
             <div className="modal-content">
-              <div className='modal-video-container'>
-                <p className='modal-title'>{modalContent}</p>
-                <video controls src="https://media"></video>
-                <p style={{ fontSize: "25px" }}>Tasks</p>
-                <div className='modal-question'>
-                  <ol type='1'>
-                    <li>Task 1 for Lesson 1</li>
-                    <li>Task 2 for Lesson 1</li>
-                    <li>Task 3 for Lesson 1</li>
-                  </ol>
+              <div className="modal-video-container">
+                <p className="modal-title">{selectedLesson?.title}</p>
+                <div className="embed-container">
+                  <iframe width="100%" height="355" src={`https://play.boomstream.com/${selectedLesson?.media}&hash=${selectedLesson?.hash}`} frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+                </div>
+                <div className="modal-question">
+                  <ul>
+                    {
+                      selectedLesson?.files?.length == 0 ? <p style={{ color: "red", fontSize: "18px", margin: "10px 0" }}>
+                        No tasks for this lesson
+                      </p>
+                        :
+                        selectedLesson?.files?.map((item, index) => {
+                          return (
+                            <li  key={index}>
+                              <a
+                                
+                                style={{ display: "flex", alignItems: "center" }}
+                                href={item?.file}
+                                download
+                                className="task-link"
+                              >
+                                {`${index + 1} - Task`}
+                              </a>
+                            </li>
+                          )
+                        })
+                    }
+                  </ul>
                 </div>
                 <a href={`https://t.me/${studentData?.assistant?.phone_number}`}>Submit Tasks to Mentor</a>
               </div>
@@ -124,6 +146,7 @@ const Student = () => {
             </div>
           </div>
         )}
+
 
         <Button onClick={logout}>Log out</Button>
       </div>

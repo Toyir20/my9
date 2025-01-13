@@ -131,7 +131,7 @@
     background-color: #ffffff93;
     font-size: 1rem;
     color: #333;
-    max-height: 500px;
+    /* max-height: 500px; */
     /* Animatsiya davomida ochilishi */
     overflow: hidden;
     transition: 1s ease-in-out;
@@ -200,7 +200,9 @@
     text-decoration: underline !important;
     color: rgb(0, 148, 148);
   }
-  
+  .embed-container{
+    width: 900px;
+  }
   /* Close button */
   .close-button {
     position: absolute;
