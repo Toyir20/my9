@@ -130,7 +130,7 @@ const Student = () => {
                                 download
                                 className="task-link"
                               >
-                                {`${index + 1} - Task`}
+                                {item?.name}
                               </a>
                             </li>
                           )
