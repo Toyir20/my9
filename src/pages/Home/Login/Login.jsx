@@ -34,14 +34,13 @@ const Login = () => {
       "password": password
     })
       .then(function (response) {
-        console.log(response);
         const accessToken = response.data.data.access; // Tokenni responsedan olish
         localStorage.setItem("token", accessToken); // Tokenni localStorage'ga saqlash
         response.data.success && navigate('/profile');
         location.reload();
       })
       .catch(function (error) {
-        console.error("Login xatosi:", error);
+        // console.error("Login xatosi:", error);
       });
   };
 

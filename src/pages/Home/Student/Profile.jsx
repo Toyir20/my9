@@ -43,7 +43,7 @@ const Student = () => {
         setStudentCourse(response.data.data.courses)
       })
       .catch((error) => {
-        console.log('Xato:', error);
+        // console.log('Xato:', error);
       });
   }
 
