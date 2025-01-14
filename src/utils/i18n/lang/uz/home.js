@@ -4,7 +4,7 @@ const home = {
       "<span class='animate-text bg-gradient-to-r from-main via-accent2 to-secondary bg-clip-text text-transparent'>First Lady Niner</span> Mamura Yuldasheva tomonidan Ingliz tili va IELTS markazi",
     description:
       "Biz nafaqat ingliz tilini o'rgatamiz, balki yangi imkoniyatlar eshigini ochamiz!",
-    button: "Birinchi darsga yoziling",
+    button: "Birinchi dars uchun murojaat qiling",
   },
   stats: {
     experience: "yillik tajriba",
@@ -122,7 +122,7 @@ const home = {
         feature6: "Amerika atmosferasi.",
       },
     },
-    signUpButton: "Birinchi darsga yoziling",
+    signUpButton: "Birinchi dars uchun murojaat qiling",
   },
   contact: {
     title: "Biz bilan bog'laning",

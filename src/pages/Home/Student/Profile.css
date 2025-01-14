@@ -172,7 +172,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 0.3s ease-in-out;
-    width: 70%;
+    width: 80%;
   }
   .modal-video-container{
     display: flex;

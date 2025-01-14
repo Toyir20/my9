@@ -80,7 +80,8 @@ const Courses = () => {
             </ul>
             <div className="absolute bottom-5 left-7 w-4/5 rounded-xl bg-main flex items-center justify-center border-2 border-accent1 shadow-lg hover:bg-accent1 text-primary dark:text-secondary hover:text-primary duration-300 cursor-pointer active:scale-[0.98]">
               <button className="py-2 px-1 text-sm">
-                {t("courses.signUpButton")}
+                <a href="https://t.me/my9lc_admin">  {t("courses.signUpButton")}</a>
+              
               </button>
             </div>
           </div>

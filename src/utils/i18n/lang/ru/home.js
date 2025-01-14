@@ -4,7 +4,7 @@ const home = {
       "Центр изучения английского и IELTS от <span class='animate-text bg-gradient-to-r from-main via-accent2 to-secondary bg-clip-text text-transparent'>First Lady Niner</span> Мамуры Юлдашевой",
     description:
       "Мы не просто обучаем английскому, мы открываем новые горизонты!",
-    button: "Запишитесь на первый урок",
+    button: "Контакты для первого занятия",
   },
   stats: {
     experience: "лет опыта",
@@ -120,7 +120,7 @@ const home = {
         feature6: "Американская атмосфера.",
       },
     },
-    signUpButton: "Запишитесь на первый урок",
+    signUpButton: "Контакты для первого занятия",
   },
   contact: {
     title: "Свяжитесь с нами",

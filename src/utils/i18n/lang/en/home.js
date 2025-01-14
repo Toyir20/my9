@@ -3,7 +3,7 @@ const home = {
     title:
       "English and IELTS Learning Center by <span class='animate-text bg-gradient-to-r from-main via-accent2 to-secondary bg-clip-text text-transparent'>First Lady Niner</span> Mamura Yuldasheva",
     description: "We don’t just teach English, we open new horizons!",
-    button: "Sign up for the first lesson",
+    button: "Contact for the first lesson",
   },
   stats: {
     experience: "years of experience",
@@ -115,7 +115,7 @@ const home = {
         feature6: "American atmosphere.",
       },
     },
-    signUpButton: "Sign up for the first lesson",
+    signUpButton: "Contact for the first lesson",
   },
   contact: {
     title: "Contact Us",
