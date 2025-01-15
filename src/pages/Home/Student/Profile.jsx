@@ -100,7 +100,7 @@ const Student = () => {
 
         <div>
           <p>Telegram profile of your assistant <a style={{ textDecoration: "underline", color: "rgb(0, 148, 148)" }}
-            href={`https://t.me/${studentData?.assistant?.phone_number}`}>
+            href={`https://t.me/+${studentData?.assistant?.phone_number}`}>
             {studentData?.assistant?.first_name == undefined ? " " : `${studentData?.assistant?.first_name}, ${studentData?.assistant?.last_name}`} </a> </p>
         </div>
 
