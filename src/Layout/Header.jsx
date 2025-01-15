@@ -174,10 +174,7 @@ const Header = () => {
               <Button
                 aria-label="call"
                 className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
-                <LogIn
-                  size={15}
-                  className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
-                />
+               Login
               </Button>
             </a>
           )}

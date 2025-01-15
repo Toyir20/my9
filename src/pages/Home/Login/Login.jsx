@@ -40,7 +40,7 @@ const Login = () => {
         location.reload();
       })
       .catch(function (error) {
-        // console.error("Login xatosi:", error);
+        alert("Raqam yoki Parol noto'g'ri");
       });
   };
 

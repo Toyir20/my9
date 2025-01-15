@@ -173,6 +173,8 @@
     text-align: center;
     animation: fadeIn 0.3s ease-in-out;
     width: 80%;
+    height: 90%;
+    overflow: scroll;
   }
   .modal-video-container{
     display: flex;
