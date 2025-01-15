@@ -5,6 +5,7 @@
     /* background-color: #f8f9fa; */
     min-height: 100vh;
     padding: 20px 120px;
+    /* color: black !important; */
 }
 
 .header {
@@ -15,6 +16,7 @@
     border-radius: 8px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black !important;
 }
 
 .link {
@@ -50,7 +52,7 @@
     text-align: left;
     font-size: 20px;
     margin-bottom: 10px;
-    color: #343a40;
+    color: #343a40 !important;
 }
 
 .form {
@@ -120,10 +122,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: black !important;
+
 }
 
 .accordion-header h3 {
     margin: 0;
+    color: black !important;
     font-size: 1.2rem;
 }
 
@@ -175,6 +180,7 @@
     width: 80%;
     height: 90%;
     overflow: scroll;
+    color: black !important;
   }
   .modal-video-container{
     display: flex;
