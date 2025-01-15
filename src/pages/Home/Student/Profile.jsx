@@ -138,7 +138,7 @@ const Student = () => {
                     }
                   </ul>
                 </div>
-                <a href={`https://t.me/${studentData?.assistant?.phone_number}`}>Submit Tasks to Mentor</a>
+                <a href={`https://t.me/+${studentData?.assistant?.phone_number}`}>Submit Tasks to Mentor</a>
               </div>
               <span className="close-button" onClick={closeModal}>
                 &times;
