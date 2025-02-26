@@ -50,10 +50,7 @@ const Student = () => {
   useEffect(() => {
     a()
   }, [])
-  const logout = () => {
-    localStorage.removeItem("token");
-    location.reload()
-  }
+
 
   return (
     <>
@@ -61,6 +58,10 @@ const Student = () => {
         <div className="header">
           <h1 className="title">Welcome, {`${studentData?.first_name}  ${studentData?.last_name}`}</h1>
         </div>
+        <div className="header">
+          <h1 className="title">Ish vaqti dushanbadan-shanbagacha, soat 9:00 - 18:00 oralig’ida</h1>
+        </div>
+        
         <h2>All Courses</h2>
         {studentCourse?.map((item, index) => (
           <div className="accordion" key={index}>
@@ -148,7 +149,7 @@ const Student = () => {
         )}
 
 
-        <Button onClick={logout}>Log out</Button>
+       
       </div>
 
     </>

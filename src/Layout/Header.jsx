@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import ThemeSwitcher from "../utils/Theme/ThemeSwitcher";
 import LanguageSwitcher from "../utils/i18n/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { Menu, Phone, PhoneCall, X, LogIn, CircleUserRound } from "lucide-react";
+import { Menu, Phone, PhoneCall, X, LogIn, CircleUserRound ,LogOut} from "lucide-react";
 import useThemeStore from "../utils/Theme/Theme";
+import { useLocation } from "react-router-dom";
+
 import {
   Drawer,
   Button,
@@ -18,7 +20,7 @@ const Header = () => {
   const { t } = useTranslation("layout");
   const { theme } = useThemeStore();
   const isDarkMode = theme === "dark";
-
+  const location = useLocation();
   // LocalStorage'dan token o'qish
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -27,28 +29,65 @@ const Header = () => {
     setIsLoggedIn(!!token); // Token mavjud bo'lsa true, aks holda false
   }, []);
 
-  const links = [
-    {
-      text: t("header.teachers"),
-      scroll_to: "",
-      icon: "https://www.svgrepo.com/show/493523/teacher-male.svg",
-    },
-    {
-      text: t("header.courses"),
-      scroll_to: "courses",
-      icon: "https://www.svgrepo.com/show/382165/book-shelf-books-education-learning-school-study.svg",
-    },
-    {
-      text: t("header.results"),
-      scroll_to: "",
-      icon: "https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg",
-    },
-    {
-      text: t("header.contact"),
-      scroll_to: "contact",
-      icon: "https://www.svgrepo.com/show/67982/telephone.svg",
-    },
-  ];
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.reload()
+  }
+
+  // const links = [
+  //   {
+  //     text: t("header.teachers"),
+  //     scroll_to: "",
+  //     icon: "https://www.svgrepo.com/show/493523/teacher-male.svg",
+  //   },
+  //   {
+  //     text: t("header.courses"),
+  //     scroll_to: "courses",
+  //     icon: "https://www.svgrepo.com/show/382165/book-shelf-books-education-learning-school-study.svg",
+  //   },
+  //   {
+  //     text: t("header.results"),
+  //     scroll_to: "",
+  //     icon: "https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg",
+  //   },
+  //   {
+  //     text: t("header.contact"),
+  //     scroll_to: "contact",
+  //     icon: "https://www.svgrepo.com/show/67982/telephone.svg",
+  //   },
+  // ];
+
+  const links =
+    location.pathname === "/profile"
+      ? [
+          {
+            text: "Contact with assistant",
+            scroll_to: "contact-assistant",
+            icon: "https://www.svgrepo.com/show/67982/telephone.svg",
+          },
+        ]
+      : [
+          {
+            text: t("header.teachers"),
+            scroll_to: "",
+            icon: "https://www.svgrepo.com/show/493523/teacher-male.svg",
+          },
+          {
+            text: t("header.courses"),
+            scroll_to: "courses",
+            icon: "https://www.svgrepo.com/show/382165/book-shelf-books-education-learning-school-study.svg",
+          },
+          {
+            text: t("header.results"),
+            scroll_to: "",
+            icon: "https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg",
+          },
+          {
+            text: t("header.contact"),
+            scroll_to: "contact",
+            icon: "https://www.svgrepo.com/show/67982/telephone.svg",
+          },
+        ];
 
   const socialLinks = [
     {
@@ -139,6 +178,7 @@ const Header = () => {
             </Button>
           </a>
           {isLoggedIn ? (
+            <div style={{display: "flex"}}>
             <a href="/profile">
               <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
@@ -159,6 +199,27 @@ const Header = () => {
                 />
               </Button>
             </a>
+            <a onClick={logout} style={{marginLeft: "17px"}}>
+              <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                  <LogOut
+                    size={17}
+                    className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                  />
+                  Log out
+                </span>
+              </button>
+              <Button
+                aria-label="call"
+                className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
+                <LogOut
+                  size={15}
+                  className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
+                />
+              </Button>
+            </a>
+            </div>
           ) : (
             <a href="/login">
               <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
@@ -168,13 +229,13 @@ const Header = () => {
                     size={17}
                     className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
                   />
-                  Login
+                  Course Login
                 </span>
               </button>
               <Button
                 aria-label="call"
                 className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
-               Login
+               Course Login
               </Button>
             </a>
           )}
