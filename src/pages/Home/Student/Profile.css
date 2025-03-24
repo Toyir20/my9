@@ -29,6 +29,12 @@
     margin: 0;
     font-size: 24px;
 }
+.title-name {
+  padding: 0px !important;
+    width: 300px !important;
+    /* border: none !important; */
+}
+
 
 .logout {
     color: #dc3545;
@@ -211,6 +217,22 @@
   .embed-container{
     width: 900px;
   }
+  .modal-question-file{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .render-file{
+    display: flex;
+    width: 100%;
+    background-color: rgba(245, 243, 243, 0.838);
+    margin: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 10px;
+  }
+.all-files-map{
+  width: 1100px;
+}
   /* Close button */
   .close-button {
     position: absolute;
@@ -232,4 +254,74 @@
       transform: scale(1);
     }
   }
+
   
+  /* dropdown select */
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .dropdown-header {
+    font-size: 20px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-bottom: 2px solid #ddd; /* Ajratish uchun pastki chiziq */
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 10px 0;
+    width: 400px; /* 💡 Kattaroq kenglik */
+    max-width: 100%;
+    min-width: 300px;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  .dropdown-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dropdown-item span {
+    display: block;
+    font-size: 14px;
+    margin: 2px 0;
+  }
+  
+  .dropdown-item:hover {
+    background: #f0f0f0;
+  }
+  
+
+  /* media */
+
+  @media (min-width: 100px) and (max-width: 768px) {
+    .all-files-map{
+      width: 100%;
+    }
+    .course-container{
+      padding: 15px;
+    }
+    .accordion-header{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }

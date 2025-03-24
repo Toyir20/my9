@@ -1,1 +1,1 @@
-export const baseUrl = "https://my9.uz/api/"
+export const baseUrl = "https://my9.uz/api/v2/"

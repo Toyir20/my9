@@ -1,7 +1,7 @@
 // api.js
 import axios from 'axios';
 
-const API_URL = 'https://my9.uz/api';
+const API_URL = 'https://my9.uz/api/v2';
 
 // Axios instansiyasini yaratish va umumiy headerlarni sozlash
 const apiClient = axios.create({

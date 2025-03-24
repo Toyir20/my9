@@ -1,0 +1,24 @@
+.notification-bar {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: bold;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  

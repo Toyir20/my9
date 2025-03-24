@@ -38,6 +38,7 @@ const Login = () => {
         localStorage.setItem("token", accessToken); // Tokenni localStorage'ga saqlash
         response.data.success && navigate('/profile');
         location.reload();
+        // console.log(accessToken)
       })
       .catch(function (error) {
         alert("Raqam yoki Parol noto'g'ri");
