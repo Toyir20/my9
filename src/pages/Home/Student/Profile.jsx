@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Timer from './Timer';
 import "./Profile.css"
 import { getData } from '../../../api/api';
 import { Viewer, Worker } from "@react-pdf-viewer/core";
@@ -78,17 +79,6 @@ const Student = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const options = [
-    "Material Tailwind HTML",
-    "Material Tailwind React",
-    "Material Tailwind Vue",
-    "Material Tailwind Angular",
-    "Material Tailwind Svelte",
-  ];
-
-  const handleSelect = (option) => {
-    setIsOpen(false);
-  };
 
   return (
     <>
@@ -98,6 +88,7 @@ const Student = () => {
             <div className="dropdown-container">
               <div className="dropdown-header" onClick={() => setIsOpen(!isOpen)}>
                 {`Welcome, ${studentData?.first_name} ${studentData?.last_name}`}
+
               </div>
               {isOpen && (
                 <ul className="dropdown-list">
@@ -110,13 +101,13 @@ const Student = () => {
                   ))}
                 </ul>
               )}
+            <i className="title">Ish vaqti dushanbadan-shanbagacha, soat 9:00 - 18:00 oralig’ida</i>
             </div>
           </div>
-
         </div>
-        <div className="header">
-          <h1 className="title">Ish vaqti dushanbadan-shanbagacha, soat 9:00 - 18:00 oralig’ida</h1>
-        </div>
+        {/* <div className="header">
+          <i className="title">Ish vaqti dushanbadan-shanbagacha, soat 9:00 - 18:00 oralig’ida</i>
+        </div> */}
 
         <h2>All Courses</h2>
         {studentCourse?.map((item, index) => (
@@ -126,7 +117,7 @@ const Student = () => {
               onClick={() => toggleAccordion(index, item.id)}
             >
 
-              <h3  style={{ marginRight: "10px" }}>{item.title}</h3>
+              <h3 style={{ marginRight: "10px" }}>{item.title}</h3>
               <div style={{ display: "flex" }}>
                 <p style={{ marginRight: "10px" }}>Kursning tugash sanasi {item?.expiry_date}</p>
                 <span>{activeIndex === index ? "-" : "+"}</span>
@@ -172,7 +163,7 @@ const Student = () => {
             {
               selectedLesson?.media == null ? <div className="modal-content">
                 <div className="modal-video-container">
-                  <p className="modal-title">{selectedLesson?.title}</p>
+                  <p className="modal-title"><span>{selectedLesson?.title}</span>   <span><Timer initialSeconds={240} /></span></p>
                   <div className="modal-question-file">
 
                     {selectedLesson?.tasks?.map((files, index) => (
