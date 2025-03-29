@@ -55,7 +55,7 @@ const Student = () => {
     getData(`users/me`)
       .then((response) => {
         setStudentData(response.data.data)
-        console.log(response)
+        console.log(response, "me")
       })
       .catch((error) => {
         // console.log('Xato:', error);
@@ -79,6 +79,12 @@ const Student = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const openStudentModal = () => {
+    setIsOpen(true);
+  };
+  const closeStudentModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -86,22 +92,33 @@ const Student = () => {
         <div className="header">
           <div >
             <div className="dropdown-container">
-              <div className="dropdown-header" onClick={() => setIsOpen(!isOpen)}>
+              <div className="dropdown-header" onClick={openStudentModal}>
                 {`Welcome, ${studentData?.first_name} ${studentData?.last_name}`}
 
               </div>
               {isOpen && (
-                <ul className="dropdown-list">
-                  {studentCourse.map((option, index) => (
-                    <li key={index} className="dropdown-item">
-                      <span><strong>Kurs nomi:</strong> {option?.title}</span>
-                      <span><strong>Qachon to‘lov qilingan:</strong> {option?.payment_date}</span>
-                      <span><strong>Qancha to‘lov qilingan:</strong> {option?.payment_amount}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="modal-user">
+                  <div className="modal-content">
+                    <h2>Student Information</h2>
+                    <p><strong>Name:</strong> {studentData?.first_name} {studentData?.last_name}</p>
+                    <p><strong>Phone Number:</strong> {studentData?.phone_number}</p>
+                    <p><strong>Date of Birth:</strong> {studentData?.birth_date}</p>
+                    <p><strong>Date of Registration:</strong> {new Date(studentData?.created_at).toISOString().split('T')[0]}</p>
+                    <h3>Courses</h3>
+                    <ul>
+                      {studentCourse.map((option, index) => (
+                        <li key={index}>
+                          <span><strong>Course Name:</strong> {option?.title}</span><br />
+                          <span><strong>Payment Date:</strong> {option?.payment_date}</span><br />
+                          <span><strong>Amount Paid:</strong> {option?.payment_amount}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <button onClick={closeStudentModal}>Close</button>
+                  </div>
+                </div>
               )}
-            <i className="title">Ish vaqti dushanbadan-shanbagacha, soat 9:00 - 18:00 oralig’ida</i>
+              <i className="title">Assistant working hours:  Monday - Saturday 9 am - 6 pm</i>
             </div>
           </div>
         </div>
@@ -119,7 +136,7 @@ const Student = () => {
 
               <h3 style={{ marginRight: "10px" }}>{item.title}</h3>
               <div style={{ display: "flex" }}>
-                <p style={{ marginRight: "10px" }}>Kursning tugash sanasi {item?.expiry_date}</p>
+                <p style={{ marginRight: "10px" }}>Course end date {item?.expiry_date}</p>
                 <span>{activeIndex === index ? "-" : "+"}</span>
               </div>
 
@@ -186,7 +203,7 @@ const Student = () => {
 
                             {/* PDF chiqishi */}
                             {file.type === "pdf" && (
-                              <div style={{ border: "1px solid #ccc", height: "700px", overflow: "hidden", borderRadius: "10px", width: "100%", margin: "10px" }}>
+                              <div style={{ border: "1px solid #ccc", overflow: "hidden", borderRadius: "10px", width: "100%", margin: "10px" }}>
                                 <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}>
                                   <Viewer fileUrl={file.file} />
                                 </Worker>

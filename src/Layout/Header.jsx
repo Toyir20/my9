@@ -61,7 +61,7 @@ const Header = () => {
     location.pathname === "/profile"
       ? [
           {
-            text: "Contact with assistant",
+            text: "Contact Assistant",
             scroll_to: "contact-assistant",
             icon: "https://www.svgrepo.com/show/67982/telephone.svg",
           },

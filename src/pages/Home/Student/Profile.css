@@ -183,7 +183,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 0.3s ease-in-out;
-    width: 95%;
+    width: 80%;
     height: 95%;
     overflow: scroll;
     color: black !important;
@@ -238,7 +238,7 @@
     border-radius: 10px;
   }
 .all-files-map{
-  width: 1300px;
+  width: 1000px;
 }
   /* Close button */
   .close-button {
@@ -335,3 +335,82 @@
       justify-content: center;
     }
   }
+
+
+  .modal-user {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-user .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .modal-user .modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .modal-user .modal-content p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .modal-user .modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .modal-user .modal-content ul li {
+    background: #f8f9fa;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .modal-user .modal-content button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .modal-user .modal-content button:hover {
+    background: #0056b3;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
