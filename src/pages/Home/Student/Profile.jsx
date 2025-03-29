@@ -85,7 +85,7 @@ const Student = () => {
   const closeStudentModal = () => {
     setIsOpen(false);
   };
-
+  const [timeLimet, setTimelimet] = useState(0)
   return (
     <>
       <div className="course-container">
@@ -180,14 +180,24 @@ const Student = () => {
             {
               selectedLesson?.media == null ? <div className="modal-content">
                 <div className="modal-video-container">
-                  <p className="modal-title"><span>{selectedLesson?.title}</span>   <span><Timer initialSeconds={240} /></span></p>
+                  {/* {console.log(selectedLesson?.tasks[0]?.time_limit,"ljjhjk")} */}
+                  <p className="modal-title"><span>{selectedLesson?.title}</span>
+                    <span>
+                      {selectedLesson?.tasks?.map((files, index) => (
+                        <div key={index}>
+                          <Timer initialSeconds={files.time_limit || null} />
+                        </div>
+                      ))}
+
+                    </span>
+                  </p>
                   <div className="modal-question-file">
 
                     {selectedLesson?.tasks?.map((files, index) => (
                       <div className='render-file' key={index}>
+                        {console.log(files, "fil")}
                         {files?.files?.map((file, index) => (
                           <div key={index} className='all-files-map'>
-                            {console.log(file, "fil")}
 
                             {/* Rasmni chiqarish */}
                             {file.type === "image" && (

@@ -56,7 +56,7 @@ const Header = () => {
   //     icon: "https://www.svgrepo.com/show/67982/telephone.svg",
   //   },
   // ];
-
+console.log(location.pathname)
   const links =
     location.pathname === "/profile"
       ? [
@@ -165,7 +165,10 @@ const Header = () => {
                   size={17}
                   className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
                 />
-                +998 95 555 55 39
+                {
+                  location.pathname == "/profile" ? "+998 95 344 34 34" : "+998 95 555 55 39"
+                }
+                
               </span>
             </button>
             <Button

@@ -25,14 +25,20 @@ const Timer = ({ initialSeconds }) => {
   };
 
   return (
-    <div style={{ textAlign: "center", display: "flex", alignItems:"center" }}>
-      <button onClick={() => setIsRunning(!isRunning)}>
-        {isRunning ? <CiPause1 /> : <MdOutlineNotStarted />}
-      </button>
-      <h1 style={{ color: seconds === 0 ? "red" : "black", marginLeft:"10px",fontSize:"18px" }}>
-        {formatTime(seconds)}
-      </h1>
-    </div>
+
+    <>
+      {
+        initialSeconds == null ? "" : <div style={{ textAlign: "center", display: "flex", alignItems: "center" }}>
+          <button onClick={() => setIsRunning(!isRunning)}>
+            {isRunning ? <CiPause1 /> : <MdOutlineNotStarted />}
+          </button>
+          <h1 style={{ color: seconds === 0 ? "red" : "black", marginLeft: "10px", fontSize: "18px" }}>
+            {formatTime(seconds)}
+          </h1>
+        </div>
+      }
+    </>
+
   );
 };
 
