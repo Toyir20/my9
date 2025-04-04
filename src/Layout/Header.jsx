@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ThemeSwitcher from "../utils/Theme/ThemeSwitcher";
 import LanguageSwitcher from "../utils/i18n/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { Menu, Phone, PhoneCall, X, LogIn, CircleUserRound ,LogOut} from "lucide-react";
+import { Menu, Phone, PhoneCall, X, LogIn, CircleUserRound, LogOut } from "lucide-react";
 import useThemeStore from "../utils/Theme/Theme";
 import { useLocation } from "react-router-dom";
 
@@ -34,60 +34,38 @@ const Header = () => {
     window.location.reload()
   }
 
-  // const links = [
-  //   {
-  //     text: t("header.teachers"),
-  //     scroll_to: "",
-  //     icon: "https://www.svgrepo.com/show/493523/teacher-male.svg",
-  //   },
-  //   {
-  //     text: t("header.courses"),
-  //     scroll_to: "courses",
-  //     icon: "https://www.svgrepo.com/show/382165/book-shelf-books-education-learning-school-study.svg",
-  //   },
-  //   {
-  //     text: t("header.results"),
-  //     scroll_to: "",
-  //     icon: "https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg",
-  //   },
-  //   {
-  //     text: t("header.contact"),
-  //     scroll_to: "contact",
-  //     icon: "https://www.svgrepo.com/show/67982/telephone.svg",
-  //   },
-  // ];
-console.log(location.pathname)
+  console.log(location.pathname)
   const links =
     location.pathname === "/profile"
       ? [
-          {
-            text: "Contact Assistant",
-            scroll_to: "contact-assistant",
-            icon: "https://www.svgrepo.com/show/67982/telephone.svg",
-          },
-        ]
+        {
+          text: "Contact Assistant",
+          scroll_to: "https://t.me/my9_manager",
+          icon: "https://www.svgrepo.com/show/67982/telephone.svg",
+        },
+      ]
       : [
-          {
-            text: t("header.teachers"),
-            scroll_to: "",
-            icon: "https://www.svgrepo.com/show/493523/teacher-male.svg",
-          },
-          {
-            text: t("header.courses"),
-            scroll_to: "courses",
-            icon: "https://www.svgrepo.com/show/382165/book-shelf-books-education-learning-school-study.svg",
-          },
-          {
-            text: t("header.results"),
-            scroll_to: "",
-            icon: "https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg",
-          },
-          {
-            text: t("header.contact"),
-            scroll_to: "contact",
-            icon: "https://www.svgrepo.com/show/67982/telephone.svg",
-          },
-        ];
+        {
+          text: t("header.teachers"),
+          scroll_to: "",
+          icon: "https://www.svgrepo.com/show/493523/teacher-male.svg",
+        },
+        {
+          text: t("header.courses"),
+          scroll_to: "courses",
+          icon: "https://www.svgrepo.com/show/382165/book-shelf-books-education-learning-school-study.svg",
+        },
+        {
+          text: t("header.results"),
+          scroll_to: "",
+          icon: "https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg",
+        },
+        {
+          text: t("header.contact"),
+          scroll_to: "contact",
+          icon: "https://www.svgrepo.com/show/67982/telephone.svg",
+        },
+      ];
 
   const socialLinks = [
     {
@@ -143,7 +121,7 @@ console.log(location.pathname)
                   href={
                     link.scroll_to === "login" || link.scroll_to === "profile"
                       ? `${link.scroll_to}`
-                      : `#${link.scroll_to}`
+                      : `${link.scroll_to}`
                   }
                   className="duration-200 hover:text-accent2 border-b-2 pb-[2px] border-transparent hover:border-accent2">
                   {link.text}
@@ -157,7 +135,9 @@ console.log(location.pathname)
             <ThemeSwitcher />
             <LanguageSwitcher />
           </div>
-          <a href="tel:+998955555539">
+          <a href={
+            location.pathname == "/profile" ? "tel:+998953443434" : "tel:+998955555539"
+          }>
             <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
@@ -168,7 +148,7 @@ console.log(location.pathname)
                 {
                   location.pathname == "/profile" ? "+998 95 344 34 34" : "+998 95 555 55 39"
                 }
-                
+
               </span>
             </button>
             <Button
@@ -181,47 +161,47 @@ console.log(location.pathname)
             </Button>
           </a>
           {isLoggedIn ? (
-            <div style={{display: "flex"}}>
-            <a href="/profile">
-              <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+            <div style={{ display: "flex" }}>
+              <a href="/profile">
+                <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                    <CircleUserRound
+                      size={17}
+                      className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                    />
+                    Profile
+                  </span>
+                </button>
+                <Button
+                  aria-label="call"
+                  className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
                   <CircleUserRound
-                    size={17}
-                    className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                    size={15}
+                    className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
                   />
-                  Profile
-                </span>
-              </button>
-              <Button
-                aria-label="call"
-                className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
-                <CircleUserRound
-                  size={15}
-                  className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
-                />
-              </Button>
-            </a>
-            <a onClick={logout} style={{marginLeft: "17px"}}>
-              <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                </Button>
+              </a>
+              <a onClick={logout} style={{ marginLeft: "17px" }}>
+                <button className="relative hidden lg:inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[2px] focus:outline-none">
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#007f7f_0%,#009494_50%,#00b3b3_100%)]"></span>
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                    <LogOut
+                      size={17}
+                      className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                    />
+                    Log out
+                  </span>
+                </button>
+                <Button
+                  aria-label="call"
+                  className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
                   <LogOut
-                    size={17}
-                    className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
+                    size={15}
+                    className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
                   />
-                  Log out
-                </span>
-              </button>
-              <Button
-                aria-label="call"
-                className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
-                <LogOut
-                  size={15}
-                  className="animate-wiggle-more animate-infinite animate-duration-1000 animate-ease-out"
-                />
-              </Button>
-            </a>
+                </Button>
+              </a>
             </div>
           ) : (
             <a href="/login">
@@ -238,7 +218,7 @@ console.log(location.pathname)
               <Button
                 aria-label="call"
                 className="flex lg:hidden duration-500 relative p-2 rounded-md bg-accent2 isolation-auto z-10 border-2 border-main">
-               Course Login
+                Course Login
               </Button>
             </a>
           )}
