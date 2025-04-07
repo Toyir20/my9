@@ -4,6 +4,7 @@ import "./Profile.css"
 import { getData } from '../../../api/api';
 import { Viewer, Worker } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
+import FileRenderer from './FileRenderer';
 const Student = () => {
 
   const [activeIndex, setActiveIndex] = useState(null); // Accordion boshqaruvi
@@ -193,13 +194,13 @@ const Student = () => {
                   </p>
                   <div className="modal-question-file">
 
-                    {selectedLesson?.tasks?.map((files, index) => (
+                    {/* {selectedLesson?.tasks?.map((files, index) => (
                       <div className='render-file' key={index}>
                         {console.log(files, "fil")}
                         {files?.files?.map((file, index) => (
                           <div key={index} className='all-files-map'>
 
-                            {/* Rasmni chiqarish */}
+                            Rasmni chiqarish
                             {file.type === "image" && (
                               <img
                                 src={file.file}
@@ -208,10 +209,10 @@ const Student = () => {
                               />
                             )}
 
-                            {/* Audio chiqishi */}
+                            Audio chiqishi
                             {file.type === "audio" && <audio controls src={file.file} style={{ width: "50%", margin: "10px" }}></audio>}
 
-                            {/* PDF chiqishi */}
+                            PDF chiqishi
                             {file.type === "pdf" && (
                               <div style={{ border: "1px solid #ccc", overflow: "hidden", borderRadius: "10px", width: "100%", margin: "10px" }}>
                                 <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}>
@@ -222,8 +223,15 @@ const Student = () => {
                           </div>
                         ))}
                       </div>
-                    ))}
+                    ))} */}
 
+                    {selectedLesson?.tasks?.map((files, index) => (
+                      <div className='render-file' key={index}>
+                        {files?.files?.map((file, index) => (
+                          <FileRenderer key={index} file={file} />
+                        ))}
+                      </div>
+                    ))}
 
 
                   </div>
