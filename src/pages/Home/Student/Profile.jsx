@@ -19,13 +19,14 @@ const Student = () => {
 
 
   const getSelectedLesson = (id) => {
+    console.log(id)
     getData(`students/lessons/${id}`).then((res) => {
       setSelectedLesson(res?.data?.data)
       console.log(res?.data?.data, "lessondatasi")
     })
   }
   const toggleAccordion = (index, id) => {
-    console.log(id)
+
     getData(`students/courses/${id}/lessons`)
       .then((response) => {
         setCourseLessons(response.data.data)
@@ -176,12 +177,11 @@ const Student = () => {
         </div>
 
         {/* Modal */}
-        {isModalOpen && (
+        {/* {isModalOpen && (
           <div className="modal">
             {
               selectedLesson?.media == null ? <div className="modal-content">
                 <div className="modal-video-container">
-                  {/* {console.log(selectedLesson?.tasks[0]?.time_limit,"ljjhjk")} */}
                   <p className="modal-title"><span>{selectedLesson?.title}</span>
                     <span>
                       {selectedLesson?.tasks?.map((files, index) => (
@@ -194,36 +194,7 @@ const Student = () => {
                   </p>
                   <div className="modal-question-file">
 
-                    {/* {selectedLesson?.tasks?.map((files, index) => (
-                      <div className='render-file' key={index}>
-                        {console.log(files, "fil")}
-                        {files?.files?.map((file, index) => (
-                          <div key={index} className='all-files-map'>
 
-                            Rasmni chiqarish
-                            {file.type === "image" && (
-                              <img
-                                src={file.file}
-                                alt={file.name}
-                                style={{ width: "50%", objectFit: "cover", borderRadius: "10px" }}
-                              />
-                            )}
-
-                            Audio chiqishi
-                            {file.type === "audio" && <audio controls src={file.file} style={{ width: "50%", margin: "10px" }}></audio>}
-
-                            PDF chiqishi
-                            {file.type === "pdf" && (
-                              <div style={{ border: "1px solid #ccc", overflow: "hidden", borderRadius: "10px", width: "100%", margin: "10px" }}>
-                                <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}>
-                                  <Viewer fileUrl={file.file} />
-                                </Worker>
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    ))} */}
 
                     {selectedLesson?.tasks?.map((files, index) => (
                       <div className='render-file' key={index}>
@@ -245,6 +216,7 @@ const Student = () => {
                 <div className="modal-content">
                   <div className="modal-video-container">
                     <p className="modal-title">{selectedLesson?.title}</p>
+                    {console.log(selectedLesson,"selectedLesson")}
                     <div className="embed-container">
                       <iframe width="100%" height="355" src={`https://play.boomstream.com/${selectedLesson?.media}&hash=${selectedLesson?.hash}`} frameborder="0" scrolling="no" allowfullscreen=""></iframe>
                     </div>
@@ -273,7 +245,6 @@ const Student = () => {
                         }
                       </ul>
                     </div>
-                    {/* <a href={`https://t.me/+${studentData?.assistant?.phone_number}`}>Submit Tasks to Mentor</a> */}
                   </div>
                   <span className="close-button" onClick={closeModal}>
                     &times;
@@ -281,7 +252,82 @@ const Student = () => {
                 </div>
             }
           </div>
+        )} */}
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <div className="modal-video-container">
+                <p className="modal-title">
+                  <span>{selectedLesson?.title}</span>
+                  {selectedLesson?.tasks?.length > 0 && (
+                    <span className="timer-wrapper">
+                      {selectedLesson.tasks.map((task, index) => (
+                        task?.time_limit && (
+                          <div key={task.id}>
+                            <Timer key={task.id} initialSeconds={task.time_limit} />
+                          </div>
+                        )
+                      ))}
+                    </span>
+                  )}
+                </p>
+
+
+                {selectedLesson?.media ? (
+                  <>
+                    <div className="embed-container">
+                      <iframe
+                        width="100%"
+                        height="355"
+                        src={`https://play.boomstream.com/${selectedLesson?.media}&hash=${selectedLesson?.media_hash}`}
+                        frameBorder="0"
+                        scrolling="no"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                    {selectedLesson?.tasks?.length > 0 && (
+                      <div className="modal-question">
+                        <ul>
+                          {selectedLesson.tasks.map((task, taskIndex) => (
+                            <div key={taskIndex}>
+                              {task.files.map((file, fileIndex) => (
+                                <li key={fileIndex}>
+                                  <FileRenderer file={file} />
+                                </li>
+                              ))}
+                            </div>
+                          ))}
+                        <a href={`https://t.me/+${studentData?.assistant?.phone_number}`}>
+                          Submit Tasks to Mentor
+                        </a>
+                        </ul>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <div className="modal-question-file">
+                      {selectedLesson?.tasks?.map((files, index) => (
+                        <div className="render-file" key={index}>
+                          {files?.files?.map((file, index) => (
+                            <FileRenderer key={index} file={file} />
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+
+                    <a href={`https://t.me/+${studentData?.assistant?.phone_number}`}>
+                      Submit Tasks to Mentor
+                    </a>
+                  </>
+                )}
+              </div>
+              <span className="close-button" onClick={closeModal}>&times;</span>
+            </div>
+          </div>
         )}
+
+
 
 
 
