@@ -21,7 +21,7 @@ const Stats = () => {
   const statsData = [
     { value: 8, label: t("stats.experience"), color: "pink" },
     { value: 500, label: t("stats.successful_students"), color: "lime" },
-    { value: 15, label: t("stats.staff_members"), color: "teal" },
+    { value: 10, label: t("stats.staff_members"), color: "teal" },
   ];
 
   return (
