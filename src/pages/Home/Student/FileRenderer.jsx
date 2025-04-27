@@ -43,7 +43,7 @@ const FileRenderer = ({ file }) => {
               <img
                 src={file.file}
                 alt={file.name}
-                className='w-1/2 object-cover rounded-xl mb-2'
+                className='object-cover rounded-xl mb-2'
               />
             )}
 
@@ -58,7 +58,7 @@ const FileRenderer = ({ file }) => {
 
             {/* PDF chiqishi */}
             {file.type === "pdf" && (
-              <div className='border border-gray-300 rounded-xl overflow-hidden w-full my-2' style={{ height: 'auto' }}>
+              <div className='border border-gray-300 rounded-xl overflow-hidden w-full my-2' style={{ height: 'auto' ,width:"100%"}}>
                 <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}>
                   <Viewer fileUrl={file.file} />
                 </Worker>

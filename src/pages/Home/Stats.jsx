@@ -19,8 +19,8 @@ const Stats = () => {
   }, [inView]);
 
   const statsData = [
-    { value: 5, label: t("stats.experience"), color: "pink" },
-    { value: 300, label: t("stats.successful_students"), color: "lime" },
+    { value: 8, label: t("stats.experience"), color: "pink" },
+    { value: 500, label: t("stats.successful_students"), color: "lime" },
     { value: 15, label: t("stats.staff_members"), color: "teal" },
   ];
 

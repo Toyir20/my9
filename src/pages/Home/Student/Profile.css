@@ -1,419 +1,460 @@
 /* Umumiy */
 .student-container {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    /* background-color: #f8f9fa; */
-    min-height: 100vh;
-    padding: 20px 120px;
-    /* color: black !important; */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  /* background-color: #f8f9fa; */
+  min-height: 100vh;
+  padding: 20px 120px;
+  /* color: black !important; */
 }
 
 .header {
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: black !important;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black !important;
 }
 
 .link {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 18px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .title {
-    margin: 0;
-    font-size: 16px;
+  margin: 0;
+  font-size: 16px;
 }
+
 .title-name {
   padding: 0px !important;
-    width: 300px !important;
-    /* border: none !important; */
+  width: 300px !important;
+  /* border: none !important; */
 }
 
 
 .logout {
-    color: #dc3545;
-    text-decoration: none;
-    font-size: 18px;
+  color: #dc3545;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 /* Karta va shakl */
 .card {
-    background-color: #fff;
-    padding: 0px 50px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  background-color: #fff;
+  padding: 0px 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .section-title {
-    text-align: left;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #343a40 !important;
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #343a40 !important;
 }
 
 .form {
-    width: 50%;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  width: 50%;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .save-button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 32%;
 }
 
 .input-group {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .student-image {
-    width: 50%;
+  width: 50%;
 }
 
 .label {
-    flex: 1;
-    font-size: 16px;
+  flex: 1;
+  font-size: 16px;
 }
 
 .input {
-    flex: 2;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid rgb(0, 148, 148);
-    outline-color: rgb(0, 148, 148);
-    color: rgb(0, 148, 148);
+  flex: 2;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 148, 148);
+  outline-color: rgb(0, 148, 148);
+  color: rgb(0, 148, 148);
 }
 
 .button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* course */
 .course-container {
-    padding: 100px;
+  padding: 100px;
 }
 
 .accordion {
-    border: 1px solid rgb(0, 148, 148);
-    border-radius: 5px;
-    margin: 10px 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
+  border: 1px solid rgb(0, 148, 148);
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .accordion-header {
-    background-color: #ffffff;
-    cursor: pointer;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: black !important;
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black !important;
 
 }
 
 .accordion-header h3 {
-    margin: 0;
-    color: black !important;
-    font-size: 1.2rem;
+  margin: 0;
+  color: black !important;
+  font-size: 1.2rem;
 }
 
 .accordion-content {
-    background-color: #ffffff93;
-    font-size: 1rem;
-    color: #333;
-    /* max-height: 500px; */
-    /* Animatsiya davomida ochilishi */
-    overflow: hidden;
-    transition: 1s ease-in-out;
+  background-color: #ffffff93;
+  font-size: 1rem;
+  color: #333;
+  /* max-height: 500px; */
+  /* Animatsiya davomida ochilishi */
+  overflow: hidden;
+  transition: 1s ease-in-out;
 }
 
 .accordion-content p {
-    border-top: 1px solid rgb(0, 148, 148);
-    width: 100%;
-    padding: 10px;
-    cursor: pointer;
+  border-top: 1px solid rgb(0, 148, 148);
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.accordion-content p:hover{
-    color: rgb(0, 148, 148);
+.accordion-content p:hover {
+  color: rgb(0, 148, 148);
 }
 
 /* modal */
 
 /* Modal overlay */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  /* Modal box */
-  .modal-content {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    animation: fadeIn 0.3s ease-in-out;
-    width: 80%;
-    height: 95%;
-    overflow: scroll;
-    color: black !important;
-  }
-  .modal-video-container{
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-  }
-  .modal-video-container video{
-    width: 100%;
-    height: 400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
-  }
-  .modal-title{
-    width: 100%;
-    display: flex;
-    font-size: 25px;
-    /* margin-bottom: 10px; */
-    justify-content: space-between;
-    position: sticky;
-    top: -30px;
-    z-index: 2;
-    height: 70px;
-    background-color: white;
-    padding-top: 10px;
-  }
-  .modal-question{
-    width: 100%;
-    display: flex;
-    font-size: 15px;
-    margin: 20px 0px;
-  }
-  .modal-video-container a{
-    text-decoration: underline !important;
-    color: rgb(0, 148, 148);
-  }
-  .embed-container{
-    width: 900px;
-  }
-  .modal-question-file{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .render-file{
-    display: flex;
-    width: 100%;
-    background-color: rgba(245, 243, 243, 0.838);
-    margin: 10px;
-    flex-wrap: wrap;
-    padding: 10px;
-    border-radius: 10px;
-  }
-.all-files-map{
+/* Modal box */
+.modal .modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  width: 80%;
+  height: 95%;
+  overflow: scroll;
+  color: black !important;
+}
+
+.modal .modal-video-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+
+.modal .modal-video-container video {
+  width: 100%;
+  height: 400px;
+
+}
+
+.modal .modal-title {
+  width: 100%;
+  display: flex;
+  font-size: 25px;
+  /* margin-bottom: 10px; */
+  justify-content: space-between;
+  position: sticky;
+  top: -30px;
+  z-index: 2;
+  height: 70px;
+  background-color: white;
+  padding-top: 10px;
+}
+
+.modal-question {
+  width: 100%;
+  display: flex;
+  font-size: 15px;
+  margin: 20px 0px;
+}
+
+.modal-video-container a {
+  text-decoration: underline !important;
+  color: rgb(0, 148, 148);
+}
+
+.embed-container {
+  width: 900px;
+}
+
+.modal-question-file {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.render-file {
+  display: flex;
+  width: 100%;
+  background-color: rgba(245, 243, 243, 0.838);
+  margin: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.all-files-map {
   width: 1000px;
 }
-  /* Close button */
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size:40px;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  
-  /* Fade-in animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 40px;
+  color: #ffffff;
+  cursor: pointer;
+}
+@media (min-width: 100px) and (max-width: 468px) {
+  .all-files-map {
+    width: 260px;
   }
 
-  
-  /* dropdown select */
-  .dropdown-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
+  .course-container {
+    padding: 15px;
   }
-  
-  .dropdown-header {
-    display: flex;
+
+  .accordion-header {
+    flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-bottom: 2px solid #ddd; /* Ajratish uchun pastki chiziq */
   }
-  
-  .dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    padding: 10px 0;
-    width: 400px; /* 💡 Kattaroq kenglik */
-    max-width: 100%;
-    min-width: 300px;
-    white-space: nowrap;
-    z-index: 10;
+
+  .modal-title {
+    padding-bottom: 70px;
   }
-  
-  .dropdown-item {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.2s;
+  .render-file{
     width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-bottom: 1px solid #ddd;
   }
-  
-  .dropdown-item span {
-    display: block;
-    font-size: 14px;
-    margin: 2px 0;
-  }
-  
-  .dropdown-item:hover {
-    background: #f0f0f0;
-  }
-  
-
-  /* media */
-
-  @media (min-width: 100px) and (max-width: 768px) {
-    .all-files-map{
-      width: 100%;
-    }
-    .course-container{
-      padding: 15px;
-    }
-    .accordion-header{
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .modal-title{
-      margin-bottom: 60px;
-    }
+}
+@media (min-width: 468px) and (max-width: 868px) {
+  .all-files-map {
+    width: 450px;
   }
 
+  .course-container {
+    padding: 15px;
+  }
 
-  .modal-user {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
+  .accordion-header {
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    z-index: 1000;
   }
-  
-  .modal-user .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    max-width: 90%;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
+
+  .modal-title {
+    padding-bottom: 70px;
   }
-  
-  .modal-user .modal-content h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    color: #333;
+  .render-file{
+    width: 100%;
   }
-  
-  .modal-user .modal-content p {
-    margin: 8px 0;
-    font-size: 16px;
-    color: #555;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  .modal-user .modal-content ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .modal-user .modal-content ul li {
-    background: #f8f9fa;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
-    font-size: 14px;
+}
+
+
+/* dropdown select */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-bottom: 2px solid #ddd;
+  /* Ajratish uchun pastki chiziq */
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 400px;
+  /* 💡 Kattaroq kenglik */
+  max-width: 100%;
+  min-width: 300px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item span {
+  display: block;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+
+/* media */
+
+
+
+.modal-user {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-user .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-user .modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+.modal-user .modal-content p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.modal-user .modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.modal-user .modal-content ul li {
+  background: #f8f9fa;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-user .modal-content button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-user .modal-content button:hover {
+  background: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  .modal-user .modal-content button {
-    margin-top: 15px;
-    padding: 8px 15px;
-    border: none;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .modal-user .modal-content button:hover {
-    background: #0056b3;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
+}

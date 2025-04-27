@@ -39,7 +39,7 @@ const Header = () => {
     location.pathname === "/profile"
       ? [
         {
-          text: "Contact Assistant",
+          text: "Contact Manager",
           scroll_to: "https://t.me/my9_manager",
           icon: "https://www.svgrepo.com/show/67982/telephone.svg",
         },
@@ -170,7 +170,7 @@ const Header = () => {
                       size={17}
                       className="animate-wiggle animate-infinite animate-duration-1000 animate-ease-out"
                     />
-                    Profile
+                    My Dashboard
                   </span>
                 </button>
                 <Button
