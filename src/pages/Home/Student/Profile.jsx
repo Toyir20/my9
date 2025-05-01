@@ -102,6 +102,17 @@ const Student = () => {
       document.body.style.overflow = "auto"; // Komponent unmount bo'lganda
     };
   }, [isModalOpen]);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; // Skrollni o'chirish
+    } else {
+      document.body.style.overflow = "auto"; // Skrollni tiklash
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"; // Komponent unmount bo'lganda
+    };
+  }, [isOpen]);
 
   // Modal tashqarisiga bosish orqali yopish uchun qo'shimcha kod
   const handleClickOutside = (event) => {

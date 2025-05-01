@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Title from "../../components/Title/Title";
-import teacher from "/Mamura_Yuldasheva.png";
+import teacher from "/Mamura_Yuldasheva.jpg";
 
 const WhyUs = () => {
   const { t } = useTranslation("home");

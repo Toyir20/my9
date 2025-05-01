@@ -250,7 +250,9 @@
 .all-files-map {
   width: 1000px;
 }
-
+.all-files-map img{
+  width: 100%;
+}
 /* Close button */
 .close-button {
   position: absolute;
@@ -392,17 +394,20 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  /* overflow: scroll; */
 }
 
 .modal-user .modal-content {
   background: white;
   padding: 20px;
   border-radius: 10px;
+  height: 90%;
   width: 400px;
   max-width: 90%;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-in-out;
+  overflow: scroll;
 }
 
 .modal-user .modal-content h2 {
