@@ -114,12 +114,12 @@ const home = {
       features: {
         feature1:
           "Pedagogik mahorat bo'yicha maxsus o'quv kursi, 10 ta mashg'ulotdan iborat.",
-        feature2: "Way to nine kursi.",
+        feature2: "Turli xil ta'lim uslublari bilan talabalarni jalb qilish uchun samarali dars rejalashtirish usullarini o'rganing",
         feature3: "Amerika metodologiyasi asosida ta'lim.",
         feature4:
           "CELTA malakasiga ega o'qituvchilar tomonidan qo'shimcha darslar.",
         feature5: "Individual yondashuv.",
-        feature6: "Amerika atmosferasi.",
+        feature6: "Talabalarni saqlab qolish va akademik samaradorligini oshirish uchun Bloom taksonomiyasidan foydalanishni o'rganing.",
       },
     },
     signUpButton: "Birinchi dars uchun murojaat qiling",
@@ -142,7 +142,7 @@ const home = {
     },
     contacts: {
       title: "Aloqa uchun",
-      email: "infomail@my9_lc.com",
+      email: "my9learningcenter@gmail.com",
       emailLabel: "E-Mail",
       phone: "+998 95 555 55 37",
       phoneLabel: "Telefon",

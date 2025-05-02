@@ -17,8 +17,8 @@ const Footer = () => {
     },
     {
       label: t("footer.email"),
-      value: "infomail@my9_lc.com",
-      href: "mailto:infomail@my9_lc.com",
+      value: "my9learningcenter@gmail.com",
+      href: "mailto:my9learningcenter@gmail.com",
     },
     {
       label: t("footer.address"),

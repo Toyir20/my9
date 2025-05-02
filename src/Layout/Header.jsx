@@ -118,10 +118,17 @@ const Header = () => {
             {links.map((link, index) => (
               <li key={index} data-aos="zoom-out">
                 <a
+                  // href={
+                  //   link.scroll_to === "login" || link.scroll_to === "profile"
+                  //     ? `${link.scroll_to}`
+                  //     : `#${link.scroll_to}`
+                  // }
                   href={
-                    link.scroll_to === "login" || link.scroll_to === "profile"
-                      ? `${link.scroll_to}`
-                      : `${link.scroll_to}`
+                    link.text === "Contact Manager"
+                      ? link.scroll_to // To‘g‘ridan-to‘g‘ri Telegram URL ishlatiladi
+                      : link.scroll_to === "login" || link.scroll_to === "profile"
+                        ? `${link.scroll_to}`
+                        : `#${link.scroll_to}`
                   }
                   className="duration-200 hover:text-accent2 border-b-2 pb-[2px] border-transparent hover:border-accent2">
                   {link.text}
@@ -281,8 +288,15 @@ export function Sidebar({ links, socialLinks, isDarkMode }) {
               key={index}
               className="shadow-sm shadow-accent2 dark:text-secondary dark:hover:text-primary">
               <a
+                // href={
+                //   link.scroll_to === "login" || link.scroll_to === "profile"
+                //     ? `${link.scroll_to}`
+                //     : `#${link.scroll_to}`
+                // }
                 href={
-                  link.scroll_to === "login" || link.scroll_to === "profile"
+                  link.text === "Contact Manager"
+                    ? link.scroll_to // To‘g‘ridan-to‘g‘ri Telegram URL ishlatiladi
+                    : link.scroll_to === "login" || link.scroll_to === "profile"
                     ? `${link.scroll_to}`
                     : `#${link.scroll_to}`
                 }

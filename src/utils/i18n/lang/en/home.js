@@ -56,7 +56,7 @@ const home = {
           "It all depends on individual abilities and the level the student wants to achieve. We can only provide approximate timelines after testing and a personal conversation.",
       },
       {
-        question: "What age do you accept students for English courses?",
+        question: "At what age do you accept students for English courses?",
         answer:
           "The minimum age is 13 years. For all underage students, it is mandatory to provide information about parents or guardians. All issues related to the payment of English education and exam fees will be addressed to them.",
       },
@@ -108,11 +108,11 @@ const home = {
       title: "Teacher Training",
       features: {
         feature1: "A special teaching mastery course consisting of 10 lessons.",
-        feature2: "Way to nine course.",
+        feature2: "Learn effective lesson-planning techniques to engage students with varying learning styles",
         feature3: "Training based on American methodology.",
         feature4: "Additional lessons from teachers with CELTA qualifications.",
         feature5: "Individual approach.",
-        feature6: "American atmosphere.",
+        feature6: "Learn to utilize Bloom's Taxonomy to maximize student retention and academic performance.",
       },
     },
     signUpButton: "Contact for the first lesson",
@@ -132,7 +132,7 @@ const home = {
     },
     contacts: {
       title: "Contacts",
-      email: "infomail@my9_lc.com",
+      email: "my9learningcenter@gmail.com",
       emailLabel: "E-Mail",
       phone: "+998 95 555 55 37",
       phoneLabel: "Phone",
