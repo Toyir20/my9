@@ -12,8 +12,8 @@ const Footer = () => {
   const contactInfo = [
     {
       label: t("footer.phone"),
-      value: "+998 95 555 55 37",
-      href: "tel:+998955555537",
+      value: "+998 95 555 55 39",
+      href: "tel:+998955555539",
     },
     {
       label: t("footer.email"),

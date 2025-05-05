@@ -144,7 +144,7 @@ const home = {
       title: "Aloqa uchun",
       email: "my9learningcenter@gmail.com",
       emailLabel: "E-Mail",
-      phone: "+998 95 555 55 37",
+      phone: "+998 95 555 55 39",
       phoneLabel: "Telefon",
     },
   },

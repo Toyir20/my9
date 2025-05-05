@@ -9,6 +9,7 @@ const FileRenderer = ({ file, onPlay }) => {
   const audioRef = useRef(null); // Audio elementi uchun ref
 
   const isAnswer = file.name?.toLowerCase().includes("javob") || file.name?.toLowerCase().includes("answer");
+  const isBig = file.name?.toLowerCase().includes("katta")
   const isTranscript = file.name?.toLowerCase().includes("transcript");
 
   const toggleShow = () => setShow((prev) => !prev);
@@ -50,12 +51,13 @@ const FileRenderer = ({ file, onPlay }) => {
           >
             {/* Rasmni chiqarish */}
             {file.type === "image" && (
-              <img
-                src={file.file}
-                alt={file.name}
-                className='object-cover rounded-xl mb-2'
-                style={isAnswer ? { width: '220px' } : {}}
-              />
+             <img
+             src={file.file}
+             alt={file.name}
+             className='object-cover rounded-xl mb-2'
+             style={isAnswer && !isBig ? { width: '220px' } : undefined}
+           />
+           
             )}
 
             {/* Audio chiqishi */}
