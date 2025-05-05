@@ -73,7 +73,7 @@ const home = {
       title: "General English",
       features: {
         feature1:
-          "Kurs 4 darajani qamrab oladi (Beginner dan Intermediate gacha), har biri 3 oy davom etadi.",
+          "Kurs 5 darajani qamrab oladi (Beginner dan Upper Intermediate gacha), har biri 3 oy davom etadi.",
         feature2:
           "Darslar haftada 3 marta, 80 daqiqadan o'tkaziladi, Oxford University Pressning OXFORD SOLUTION dasturi asosida.",
         feature3:

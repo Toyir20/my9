@@ -70,7 +70,7 @@ const home = {
       title: "General English",
       features: {
         feature1:
-          "The course covers 4 levels (from Beginner to Intermediate), each lasting 3 months.",
+          "The course covers 5 levels (from Beginner to Upper Intermediate), each lasting 3 months.",
         feature2:
           "Classes are held 3 times a week for 80 minutes, using the OXFORD SOLUTION program from Oxford University Press.",
         feature3:

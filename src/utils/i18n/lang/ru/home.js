@@ -72,7 +72,7 @@ const home = {
       title: "General English",
       features: {
         feature1:
-          "Курс охватывает 4 уровня (от Beginner до Intermediate), каждый из которых длится 3 месяца.",
+          "Курс охватывает 5 уровня (от Beginner до Upper Intermediate), каждый из которых длится 3 месяца.",
         feature2:
           "Занятия проводятся 3 раза в неделю по 80 минут, с использованием программы OXFORD SOLUTION от Oxford University Press.",
         feature3:
